@@ -23,11 +23,7 @@ export class AuthServiceImpl implements AuthService {
 	}
 
 	async login(request: LoginRequestDto): Promise<LoginResponseDto> {
-		console.log('in');
-
 		const user = await this._userService.validateLogin(request);
-
-		console.log('out');
 		try {
 			return {
 				user: user,
